@@ -31,6 +31,7 @@ select
 	COALESCE(nullif(cu.cst_gndr,'n/a'),az.gen,'n/a') as customer_gender,  -- CRM is the primary source for gender
 	lo.cntry  as customer_country,
 	cu.cst_marital_status as customer_marital_status,
+	az.bdate as customer_birthdate,
 	cu.cst_create_date as customer_create_date
 from silver.crm_cust_info cu
 left join silver.erp_CUST_AZ12 az
